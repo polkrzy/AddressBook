@@ -1,4 +1,5 @@
 #include "Uzytkownik.h"
+#include <iostream>
 
 // gett`ery
 void Uzytkownik::ustawId(int noweId) {
