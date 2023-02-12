@@ -1,6 +1,8 @@
 #include "KsiazkaAdresowa.h"
-#include "UzytkownikMenadzer.h"
-using namespace std;
+
+KsiazkaAdresowa::KsiazkaAdresowa() {
+    uzytkownikMenadzer.wczytajUzytkownikowZPliku();
+}
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();

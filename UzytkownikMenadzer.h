@@ -23,7 +23,8 @@ class UzytkownikMenadzer {
 
 public:
     void rejestracjaUzytkownika();
-    //int logowanieUzytkownika();
+    int logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    void wczytajUzytkownikowZPliku();
 };
 #endif
