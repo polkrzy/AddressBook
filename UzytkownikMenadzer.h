@@ -1,4 +1,4 @@
-#ifndef UZYTKOWNIKMENADZER_H
+#ifndef UZYTKOWNIKMENADZER_H    //Fajnie bytlob by w destruktorze dac wylogowanie??
 #define UZYTKOWNIKMENADZER_H
 
 #include <iostream>
@@ -9,6 +9,7 @@
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
@@ -19,13 +20,17 @@ class UzytkownikMenadzer {
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
+
     PlikZUzytkownikami plikZUzytkownikami;
 
 public:
     UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieUzytkownika();
 };
 #endif

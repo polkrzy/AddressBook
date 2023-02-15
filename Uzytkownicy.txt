@@ -4,10 +4,12 @@
 4|jsnd|ds|
 5|sfsc|cedfe|
 6|jj|gg|
-7|hh|hh|
+7|hh|kk|
 8|sd|cs|
 9|cf|de|
 10|dd|dd|
 11|d|dc|
 12|fd|gd|
 13|f|g|
+14|julota|poa|
+15|polak|sas|
