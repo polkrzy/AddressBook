@@ -9,7 +9,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 }
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
-    uzytkownikMenadzer.logowanieUzytkownika();
+    idAktualnegoUzytkownika = uzytkownikMenadzer.logowanieUzytkownika();
 }
 
 void KsiazkaAdresowa::zmianaHasla() {
@@ -17,13 +17,17 @@ void KsiazkaAdresowa::zmianaHasla() {
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
-    uzytkownikMenadzer.wylogowanieUzytkownika();
+    idAktualnegoUzytkownika = uzytkownikMenadzer.wylogowanieUzytkownika();
 }
 
 void KsiazkaAdresowa::dodajAdresata() {
-    menadzerAdresata->dodajAdresata();
+    menadzerAdresata.dodajAdresata();
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
-    menadzerAdresata->wyswietlWszystkichAdresatow();
+    menadzerAdresata.wyswietlWszystkichAdresatow();
+}
+
+int KsiazkaAdresowa::pobierzIdAktualnegoUzytkownika() {
+    return idAktualnegoUzytkownika;
 }

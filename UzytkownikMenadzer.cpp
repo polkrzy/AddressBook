@@ -60,7 +60,6 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku() {
 }
 
 int UzytkownikMenadzer::logowanieUzytkownika() {
-    //Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
     cout << endl << "Podaj login: ";
@@ -101,7 +100,7 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika() {
     noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for (int i = 0; i < (int) uzytkownicy.size(); i++) {
-        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
+        if (uzytkownicy[i].pobierzId() == KsiazkaAdresowa::pobierzIdAktualnegoUzytkownika())
         {
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
@@ -111,7 +110,8 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika() {
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
-void UzytkownikMenadzer::wylogowanieUzytkownika() {
+int UzytkownikMenadzer::wylogowanieUzytkownika() {
     idZalogowanegoUzytkownika = 0;
+    return idZalogowanegoUzytkownika;
     //adresaci.clear();
 }

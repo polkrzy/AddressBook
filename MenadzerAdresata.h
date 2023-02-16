@@ -13,21 +13,17 @@
 
 class MenadzerAdresata {
     int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
     Adresat adresat;
-
     PlikZAdresatami plikZAdresatami;
-    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-
     vector <Adresat> adresaci;
 
     Adresat podajDaneNowegoAdresata();
 
 
 public:
-    MenadzerAdresata(int idZalogowanegoUzytkownika) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika)
-    {
-        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    MenadzerAdresata(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {
+        idZalogowanegoUzytkownika = 0;
+        //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
     void dodajAdresata();
