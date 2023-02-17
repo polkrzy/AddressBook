@@ -9,19 +9,18 @@ class Uzytkownik {
     int id;
     string login;
     string haslo;
-    //int idAktualnegoUzytkownika;
+    //int idZalogowanegoUzytkownika;
 
 public:
     void ustawId(int noweId);
     void ustawLogin(string nowyLogin);
     void ustawHaslo(string noweHaslo);
-    void ustawIdAktualnegoUzytkownika(int noweIdAktualnegoUzytkownika);
-
+    //void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
 
     int pobierzId();
     string pobierzLogin();
     string pobierzHaslo();
-    //int pobierzIdAktualnegoUzytkownika();
+    //int pobierzIdZalogowanegoUzytkownika();
 
 };
 

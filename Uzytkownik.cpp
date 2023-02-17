@@ -15,11 +15,7 @@ void Uzytkownik::ustawLogin(string nowyLogin) {
 void Uzytkownik::ustawHaslo(string noweHaslo) {
     haslo = noweHaslo;
 }
-/*
-void Uzytkownik::ustawIdAktualnegoUzytkownika(int noweIdAktualnegoUzytkownika) {
-    idAktualnegoUzytkownika = noweIdAktualnegoUzytkownika;
-}
-*/
+
 //set`ery
 int Uzytkownik::pobierzId() {
     return id;
@@ -32,8 +28,4 @@ string Uzytkownik::pobierzLogin() {
 string Uzytkownik::pobierzHaslo() {
     return haslo;
 }
-/*
-int Uzytkownik::pobierzIdAktualnegoUzytkownika() {
-    return idAktualnegoUzytkownika;
-}
-*/
+

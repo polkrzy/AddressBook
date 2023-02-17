@@ -69,4 +69,6 @@ void MenadzerAdresata::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-
+void MenadzerAdresata::ustawIdZalogowanegoUzytkownika(int noweId) {
+    idZalogowanegoUzytkownika = noweId;
+}

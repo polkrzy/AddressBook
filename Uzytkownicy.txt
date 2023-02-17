@@ -9,7 +9,7 @@
 9|cf|de|
 10|dd|dd|
 11|d|dc|
-12|fd|gd|
+12|fd|sas|
 13|f|g|
 14|julota|poa|
-15|polak|sas|
+15|polak|as|
