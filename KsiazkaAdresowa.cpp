@@ -2,7 +2,6 @@
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();
-    menadzerAdresata.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
 }
 
 void KsiazkaAdresowa::rejestracjaUzytkownika() {
@@ -11,25 +10,25 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
-    uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
+    idZalogowanegoUzytkownika = uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }
 
 void KsiazkaAdresowa::zmianaHasla() {
-    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
     menadzerAdresata.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika() {
     uzytkownikMenadzer.wylogowanieUzytkownika();
-    uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
+    idZalogowanegoUzytkownika = uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }
 
 void KsiazkaAdresowa::dodajAdresata() {
-    menadzerAdresata.dodajAdresata();
     menadzerAdresata.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    menadzerAdresata.dodajAdresata();
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
-    menadzerAdresata.wyswietlWszystkichAdresatow();
     menadzerAdresata.ustawIdZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+    menadzerAdresata.wyswietlWszystkichAdresatow();
 }
