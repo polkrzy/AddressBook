@@ -64,10 +64,12 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku() {
 }
 
 void UzytkownikMenadzer::logowanieUzytkownika() {
-    string login = "", haslo = "";
+    string login = "";
+    string haslo = "";
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
+    //cin >> login;
     for (int i = 0; i < (int) uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzLogin() == login)

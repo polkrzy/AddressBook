@@ -6,7 +6,6 @@ void MenadzerAdresata::dodajAdresata() {
     adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    cout << "tutak";
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     //return ++idOstatniegoAdresata;
@@ -42,6 +41,7 @@ void MenadzerAdresata::wczytajAdresatowZPliku() {
 
 void MenadzerAdresata::wyswietlWszystkichAdresatow() {
     system("cls");
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 
     if (!adresaci.empty())
     {

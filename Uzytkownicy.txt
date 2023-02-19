@@ -1,4 +1,3 @@
-1|jna|sa|
-2|jarek|sa|
-3|janek|das|
-4|jan|sas|
+1|polkrzy|polkrzy|
+2|jan|polak|
+3|jans|as|
