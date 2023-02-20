@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-//#include <cstdlib> //atoi
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
@@ -23,7 +22,7 @@ public:
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) {};
 
     void dopiszAdresataDoPliku(Adresat adresat);
-    int pobierzIdOstatniegoAdresata();
+    int pobierzZPlikuIdOstatniegoAdresata();
     vector <Adresat> wczytajAdresatowZPliku();
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);

@@ -1,7 +1,11 @@
 #include "MenadzerAdresata.h"
 
 void MenadzerAdresata::dodajAdresata() {
-    system("cls");
+    if (idZalogowanegoUzytkownika == 0) {
+        cout << "Zaden uzytkownik nie jest zalogowany";
+    }
+    else {
+       system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
     adresat = podajDaneNowegoAdresata();
 
@@ -9,10 +13,11 @@ void MenadzerAdresata::dodajAdresata() {
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     //return ++idOstatniegoAdresata;
+    }
 }
 
 Adresat MenadzerAdresata::podajDaneNowegoAdresata() {
-    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
+    adresat.ustawId(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata() + 1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";

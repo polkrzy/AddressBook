@@ -22,6 +22,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik) {
 
 bool PlikZUzytkownikami::czyPlikJestPusty() {
     fstream plikTekstowy;
+    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
 
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)

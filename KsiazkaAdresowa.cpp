@@ -11,6 +11,7 @@ void KsiazkaAdresowa::rejestracjaUzytkownika() {
 void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
     idZalogowanegoUzytkownika = uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
+    //adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 
 void KsiazkaAdresowa::zmianaHasla() {

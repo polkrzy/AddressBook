@@ -118,5 +118,4 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika() {
 
 void UzytkownikMenadzer::wylogowanieUzytkownika() {
     idZalogowanegoUzytkownika = 0;
-    //adresaci.clear();
 }

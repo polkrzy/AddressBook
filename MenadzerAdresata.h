@@ -23,7 +23,6 @@ class MenadzerAdresata {
 public:
     MenadzerAdresata(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {
         idZalogowanegoUzytkownika = 0;
-        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
     };
 
     void ustawIdZalogowanegoUzytkownika(int noweId);
