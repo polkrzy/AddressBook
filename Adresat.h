@@ -19,7 +19,7 @@ public:
     void ustawAdres(string nowyAdres);
 
     int pobierzId();
-    int pobierzIdUzytkownika(); //???
+    int pobierzIdUzytkownika();
     string pobierzImie();
     string pobierzNazwisko();
     string pobierzNumerTelefonu();

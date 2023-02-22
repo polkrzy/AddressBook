@@ -11,7 +11,6 @@ using namespace std;
 class KsiazkaAdresowa {
     UzytkownikMenadzer uzytkownikMenadzer;
     MenadzerAdresata menadzerAdresata;
-    int idZalogowanegoUzytkownika;
 
 public:
     KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), menadzerAdresata(nazwaPlikuZAdresatami) {

@@ -27,9 +27,10 @@ public:
 
     void ustawIdZalogowanegoUzytkownika(int noweId);
     void dodajAdresata();
-    void wczytajAdresatowZPliku();
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
+    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
 };
 
 #endif

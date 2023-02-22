@@ -34,7 +34,7 @@ int Adresat::pobierzId() {
     return id;
 }
 
-int Adresat::pobierzIdUzytkownika() { //???
+int Adresat::pobierzIdUzytkownika() {
     return idUzytkownika;
 }
 

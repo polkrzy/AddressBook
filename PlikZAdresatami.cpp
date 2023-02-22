@@ -70,25 +70,6 @@ int PlikZAdresatami::pobierzZPlikuIdOstatniegoAdresata() {
     return idOstatniegoAdresata;
 }
 
-vector <Adresat> PlikZAdresatami::wczytajAdresatowZPliku() {
-    Adresat adresat;
-    vector <Adresat> adresaci;
-    string daneJednegoUzytkownikaOddzielonePionowymiKreskami = "";
-    fstream plikTekstowy;
-
-    plikTekstowy.open(nazwaPlikuZAdresatami.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true) {
-        while (getline(plikTekstowy, daneJednegoUzytkownikaOddzielonePionowymiKreskami)) {
-            adresat = pobierzDaneAdresata(daneJednegoUzytkownikaOddzielonePionowymiKreskami);
-            adresaci.push_back(adresat);
-        }
-
-    }
-    plikTekstowy.close();
-    return adresaci;
-}
-
 Adresat PlikZAdresatami::pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami)
 {
     Adresat adresat;

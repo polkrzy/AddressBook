@@ -3,6 +3,7 @@
 void MenadzerAdresata::dodajAdresata() {
     if (idZalogowanegoUzytkownika == 0) {
         cout << "Zaden uzytkownik nie jest zalogowany";
+        system("pause");
     }
     else {
        system("cls");
@@ -40,13 +41,8 @@ Adresat MenadzerAdresata::podajDaneNowegoAdresata() {
     return adresat;
 }
 
-void MenadzerAdresata::wczytajAdresatowZPliku() {
-    adresaci = plikZAdresatami.wczytajAdresatowZPliku();
-}
-
 void MenadzerAdresata::wyswietlWszystkichAdresatow() {
     system("cls");
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 
     if (!adresaci.empty())
     {
@@ -77,3 +73,8 @@ void MenadzerAdresata::wyswietlDaneAdresata(Adresat adresat) {
 void MenadzerAdresata::ustawIdZalogowanegoUzytkownika(int noweId) {
     idZalogowanegoUzytkownika = noweId;
 }
+
+void MenadzerAdresata::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+}
+
