@@ -1,7 +1,9 @@
 #include "MenadzerAdresata.h"
 
 void MenadzerAdresata::dodajAdresata() {
-    if (idZalogowanegoUzytkownika == 0) {
+    Adresat adresat;
+
+    if (ID_ZALOGOWANEGO_UZYTKOWNIKA == 0) {
         cout << "Zaden uzytkownik nie jest zalogowany";
         system("pause");
     }
@@ -11,15 +13,21 @@ void MenadzerAdresata::dodajAdresata() {
     adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    //return ++idOstatniegoAdresata;
+    if(plikZAdresatami.dopiszAdresataDoPliku(adresat)) {
+        cout << "Nowy adresat zostal dodany" << endl;
+    } else {
+        cout << "Blad. Nie udalo sie dodac nowego adresata do pliku" << endl;
+    }
+    system("pause");
     }
 }
 
 Adresat MenadzerAdresata::podajDaneNowegoAdresata() {
+    Adresat adresat;
+
     adresat.ustawId(plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata() + 1);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
@@ -50,7 +58,7 @@ void MenadzerAdresata::wyswietlWszystkichAdresatow() {
         cout << "-----------------------------------------------" << endl;
         for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
         {
-            wyswietlDaneAdresata(*itr);
+            wyswietlDaneNowegoAdresata(*itr);
         }
         cout << endl;
     }
@@ -61,7 +69,7 @@ void MenadzerAdresata::wyswietlWszystkichAdresatow() {
     system("pause");
 }
 
-void MenadzerAdresata::wyswietlDaneAdresata(Adresat adresat) {
+void MenadzerAdresata::wyswietlDaneNowegoAdresata(Adresat adresat) {
     cout << endl << "Id:                 " << adresat.pobierzId() << endl;
     cout << "Imie:               " << adresat.pobierzImie() << endl;
     cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
@@ -69,12 +77,3 @@ void MenadzerAdresata::wyswietlDaneAdresata(Adresat adresat) {
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
-
-void MenadzerAdresata::ustawIdZalogowanegoUzytkownika(int noweId) {
-    idZalogowanegoUzytkownika = noweId;
-}
-
-void MenadzerAdresata::wczytajAdresatowZalogowanegoUzytkownikaZPliku() {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-}
-

@@ -12,25 +12,22 @@
 #include "MetodyPomocnicze.h"
 
 class MenadzerAdresata {
-    int idZalogowanegoUzytkownika;
-    Adresat adresat;
-    PlikZAdresatami plikZAdresatami;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
+    PlikZAdresatami plikZAdresatami;
 
     Adresat podajDaneNowegoAdresata();
+    void wyswietlDaneNowegoAdresata(Adresat adresat);
 
 
 public:
-    MenadzerAdresata(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {
-        idZalogowanegoUzytkownika = 0;
+    MenadzerAdresata(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
+    : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+        adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
-    void ustawIdZalogowanegoUzytkownika(int noweId);
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
-    void wyswietlDaneAdresata(Adresat adresat);
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-
 };
 
 #endif
