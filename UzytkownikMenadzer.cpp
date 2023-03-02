@@ -66,17 +66,13 @@ void UzytkownikMenadzer::logowanieUzytkownika() {
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
     //cin >> login;
-    for (int i = 0; i < (int) uzytkownicy.size(); i++)
-    {
-        if (uzytkownicy[i].pobierzLogin() == login)
-        {
-            for (int iloscProb = 3; iloscProb > 0; iloscProb--)
-            {
+    for (int i = 0; i < (int) uzytkownicy.size(); i++) {
+        if (uzytkownicy[i].pobierzLogin() == login) {
+            for (int iloscProb = 3; iloscProb > 0; iloscProb--) {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
                 haslo = MetodyPomocnicze::wczytajLinie();
 
-                if (uzytkownicy[i].pobierzHaslo() == haslo)
-                {
+                if (uzytkownicy[i].pobierzHaslo() == haslo) {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
 
@@ -102,8 +98,7 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika() {
     noweHaslo = MetodyPomocnicze::wczytajLinie();
 
     for (int i = 0; i < (int) uzytkownicy.size(); i++) {
-        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
-        {
+        if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika) {
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");

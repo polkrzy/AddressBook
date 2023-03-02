@@ -12,7 +12,7 @@ void KsiazkaAdresowa::logowanieUzytkownika() {
     uzytkownikMenadzer.logowanieUzytkownika();
 
     if(uzytkownikMenadzer.czyUzytkownikJestZalogowany()) {
-        menadzerAdresata = new MenadzerAdresata(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+        menadzerAdresata = new MenadzerAdresata(NAZWA_PLIKU_Z_ADRESATAMI, NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
     }
 }
 
@@ -29,8 +29,7 @@ void KsiazkaAdresowa::wylogowanieUzytkownika() {
 void KsiazkaAdresowa::dodajAdresata() {
     if (uzytkownikMenadzer.czyUzytkownikJestZalogowany()) {
         menadzerAdresata->dodajAdresata();
-    }
-    else {
+    } else {
         cout << "Aby dodac adresata, nalezy sie zalogowac" << endl;
         system("pause");
     }
@@ -38,8 +37,28 @@ void KsiazkaAdresowa::dodajAdresata() {
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow() {
     if (uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika() > 0) {
-    menadzerAdresata->wyswietlWszystkichAdresatow();
+        menadzerAdresata->wyswietlWszystkichAdresatow();
     }
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu() {
+    menadzerAdresata->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku() {
+    menadzerAdresata->wyszukajAdresatowPoNazwisku();
+}
+
+int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
+    return uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
+}
+
+void KsiazkaAdresowa::usunAdresata() {
+    menadzerAdresata->usunAdresata();
+}
+
+void KsiazkaAdresowa::edytujAdresata() {
+    menadzerAdresata->edytujAdresata();
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
@@ -55,8 +74,7 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
     return MetodyPomocnicze::wczytajZnak();
 }
 
-char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
-{
+char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
@@ -73,8 +91,4 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     cout << "Twoj wybor: ";
 
     return MetodyPomocnicze::wczytajZnak();
-}
-
-int KsiazkaAdresowa::pobierzIdZalogowanegoUzytkownika() {
-    return uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika();
 }

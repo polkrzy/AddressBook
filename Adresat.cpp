@@ -1,6 +1,6 @@
 #include "Adresat.h"
 
-void Adresat::ustawId(int nowyId){
+void Adresat::ustawId(int nowyId) {
     if (nowyId >= 0) {
         id = nowyId;
     }

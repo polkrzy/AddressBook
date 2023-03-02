@@ -1,6 +1,4 @@
-1|jan|polaczek|
-2|polaczek|polaczek|
-3|aad|d|
-4|janus|nowak|
-5|polas|adda|
-6|dscsdds|fd|
+1|adam|polak|
+2|kasia|polak|
+3|jan|polak|
+4|ila|dss|

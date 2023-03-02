@@ -13,21 +13,34 @@
 
 class MenadzerAdresata {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-    vector <Adresat> adresaci;
+    int idWybranegoAdresata;
     PlikZAdresatami plikZAdresatami;
-
     Adresat podajDaneNowegoAdresata();
-    void wyswietlDaneNowegoAdresata(Adresat adresat);
+    void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    int podajIdWybranegoAdresata();
+    vector <Adresat> pobierzVectorAdresaci();
 
-
+protected:
+    vector <Adresat> adresaci;
+    int idUsuwanegoAdresata;
+    int idEdytowanegoAdresata;
 public:
-    MenadzerAdresata(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
-    : plikZAdresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+    MenadzerAdresata(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int idZalogowanegoUzytkownika)
+        : plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+        idUsuwanegoAdresata = 0;
+        idEdytowanegoAdresata = 0;
     };
 
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    void usunAdresata();
+    void edytujAdresata();
 };
 
 #endif
