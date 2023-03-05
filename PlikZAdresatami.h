@@ -1,9 +1,7 @@
 #ifndef PLIKZADRESATAMI_H
 #define PLIKZADRESATAMI_H
 
-#include <iostream>
 #include <vector>
-#include <fstream>
 
 #include "PlikTekstowy.h"
 #include "Adresat.h"
@@ -26,7 +24,7 @@ class PlikZAdresatami : public PlikTekstowy {
 
 public:
     PlikZAdresatami(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami)
-        : NAZWA_PLIKU(nazwaPlikuZAdresatami), NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI(nazwaTymczasowegoPlikuZAdresatami) {
+        : PlikTekstowy(nazwaPlikuZAdresatami), NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI(nazwaTymczasowegoPlikuZAdresatami) {
         idOstatniegoAdresata = 0;
     };
     bool dopiszAdresataDoPliku(Adresat adresat);

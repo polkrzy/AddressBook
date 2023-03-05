@@ -1,15 +1,9 @@
-#ifndef UZYTKOWNIKMENADZER_H    //Fajnie bytlob by w destruktorze dac wylogowanie??
+#ifndef UZYTKOWNIKMENADZER_H
 #define UZYTKOWNIKMENADZER_H
 
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <sstream>
 #include <windows.h> //pause
 
-#include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
-#include "MetodyPomocnicze.h"
 
 using namespace std;
 

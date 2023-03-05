@@ -104,7 +104,7 @@ void MenadzerAdresata::usunAdresata() {
             }
         }
     }
-    if (czyIstniejeAdresat == false) {
+    if (!czyIstniejeAdresat) {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
@@ -113,7 +113,6 @@ void MenadzerAdresata::usunAdresata() {
 
 void MenadzerAdresata::edytujAdresata() {
     system("cls");
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -121,7 +120,7 @@ void MenadzerAdresata::edytujAdresata() {
 
     bool czyIstniejeAdresat = false;
 
-    for (int i = 0; i < adresaci.size(); i++) {
+    for (unsigned int i = 0; i < adresaci.size(); i++) {
         if (adresaci[i].pobierzId() == idEdytowanegoAdresata) {
             czyIstniejeAdresat = true;
 
@@ -163,7 +162,7 @@ void MenadzerAdresata::edytujAdresata() {
             }
         }
     }
-    if (czyIstniejeAdresat == false) {
+    if (!czyIstniejeAdresat) {
         cout << endl << "Nie ma takiego adresata." << endl << endl;
     }
     system("pause");
@@ -247,7 +246,7 @@ void MenadzerAdresata::wyszukajAdresatowPoNazwisku() {
 }
 
 void MenadzerAdresata::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow) {
-    if (iloscAdresatow == 0)
+    if (!iloscAdresatow)
         cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
     else
         cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;

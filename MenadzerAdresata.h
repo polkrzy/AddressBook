@@ -1,15 +1,9 @@
 #ifndef MENADZERADRESATA_H
 #define MENADZERADRESATA_H
 
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <sstream>
 #include <windows.h> //pause
 
-#include "Adresat.h"
 #include "PlikZAdresatami.h"
-#include "MetodyPomocnicze.h"
 
 class MenadzerAdresata {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
@@ -29,7 +23,7 @@ protected:
     int idEdytowanegoAdresata;
 public:
     MenadzerAdresata(string nazwaPlikuZAdresatami, string nazwaTymczasowegoPlikuZAdresatami, int idZalogowanegoUzytkownika)
-        : plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika) {
+        : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZAdresatami(nazwaPlikuZAdresatami, nazwaTymczasowegoPlikuZAdresatami) {
         adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
         idUsuwanegoAdresata = 0;
         idEdytowanegoAdresata = 0;

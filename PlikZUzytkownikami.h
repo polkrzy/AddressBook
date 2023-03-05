@@ -1,10 +1,7 @@
 #ifndef PLIKZUZYTKOWNIKAMI_H
 #define PLIKZUZYTKOWNIKAMI_H
 
-#include <iostream>
 #include <vector>
-#include <fstream>
-#include <cstdlib> //atoi
 
 #include "PlikTekstowy.h"
 #include "Uzytkownik.h"
@@ -17,7 +14,7 @@ class PlikZUzytkownikami : public PlikTekstowy{
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 
 public:
-    PlikZUzytkownikami(string nazwaPlikuZUzytkownikami) : NAZWA_PLIKU(nazwaPlikuZUzytkownikami) {};
+    PlikZUzytkownikami(string nazwaPlikuZUzytkownikami) : PlikTekstowy(nazwaPlikuZUzytkownikami) {};
 
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     vector <Uzytkownik> wczytajUzytkownikowZPliku();

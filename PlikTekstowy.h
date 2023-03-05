@@ -12,6 +12,9 @@ protected:
 
     bool czyPlikJestPusty();
 
+public:
+    PlikTekstowy (string nazwaPliku)
+    : NAZWA_PLIKU(nazwaPliku){}
 };
 
 #endif

@@ -1,5 +1,4 @@
 #include "Uzytkownik.h"
-#include <iostream>
 
 void Uzytkownik::ustawId(int noweId) {
     if (noweId >= 0) {

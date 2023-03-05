@@ -20,18 +20,17 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika() {
         cout << "Podaj login: ";
         cin >> login;
         uzytkownik.ustawLogin(login);
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()));
 
     string haslo;
     cout << "Podaj haslo: ";
     cin >> haslo;
     uzytkownik.ustawHaslo(haslo);
-
     return uzytkownik;
 }
 
 int UzytkownikMenadzer::pobierzIdNowegoUzytkownika() {
-    if (uzytkownicy.empty() == true)
+    if (uzytkownicy.empty())
         return 1;
     else
         return uzytkownicy.back().pobierzId() + 1;
@@ -77,7 +76,6 @@ void UzytkownikMenadzer::logowanieUzytkownika() {
                     system("pause");
 
                     idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
-
                     return;
                 }
             }
